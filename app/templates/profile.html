@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+  <h1>{{ user.email }}</h1>
+  <p>ID пользователя: {{ user.id }}</p>
+  {% if user.is_admin %}
+      <p>Вы — администратор</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}Start{% endblock %}
+{% block content %}
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+            <ol class="breadcrumb" style="font-size: 1.2rem;">
+              <li class="breadcrumb-item"><a href="/">Главная</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Процессы</li>
+            </ol>
+          </nav>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Добавить новый процесс</button>
+    </div>
+    {% if process_description %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Наименование процесса</th>
+                <th scope="col">Функциональный исполнитель</th>
+                <th scope="col">Описание</th>
+                <th scope="col"> </th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for proc_desc in process_description %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ proc_desc.name }}</td>
+                        <td>{{ proc_desc.position.name }}</td>
+                        <td>{{ proc_desc.description }}</td>
+                        <td class="text-end">
+                          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#editBackdrop"><i class="bi bi-pencil"></i></button>
+                        </td>
+                    </tr>
+
+                    <!-- Модальное окно -->
+                    <div class="modal fade" id="editBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="editBackdropLabel">Редактировать процесс</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="/process_description/{{ proc_desc.id }}/edit" method="post">
+                              <div class="mb-3">
+                                  <input class="form-control" type="text" name="name" id="name" value="{{ proc_desc.name }}">
+                              </div>
+                              <div class="d-flex align-items-center">
+                                  <select class="form-select" id="position_id" name="position_id" required>
+                                      {% for pos in position %}
+                                          <option value="{{ pos.id }}" {% if pos.id == proc_desc.position_id %}selected{% endif %}>{{ pos.name }}</option>
+                                      {% endfor %}
+                                  </select> &nbsp;&nbsp;&nbsp;
+                                  <a href="/positions" class="btn btn-primary">+</a>
+                              </div>
+                              <br>
+                              <div class="mb-3">
+                                  <label for="description" class="form-label">Описание</label>
+                                  <textarea class="form-control" name="description" id="description" rows="2">{{ proc_desc.description }}</textarea>
+                              </div>
+                              <button type="submit" class="btn btn-success">Сохранить</button>
+                          </form>
+                          
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% else %}
+        <p>Заказы не найдены.</p>
+
+
+    {% endif %}
+  <!-- Модальное окно -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Добавить новый процесс</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+            <form action="/process_description/create" method="post">
+                <div class="mb-3">
+                  <input class="form-control" type="stringformat" name="name" id="name" required placeholder="Наименование процесса">
+                </div>
+
+                <div class="d-flex align-items-center">
+                  <select class="form-select" id="position_id" name="position_id" required>
+                      <option selected>Выберите исполнительную функцию</option>
+                      {% for pos in position %}
+                      <option value="{{ pos.id }}">{{ pos.name }}</option>
+                      {% endfor %}
+                  </select> &nbsp;&nbsp;&nbsp;
+                  <a href="/positions" class="btn btn-primary">+</a>
+                </div>
+
+                <br>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">При необходимости добавьте описание</label>
+                    <textarea class="form-control" name="description" id="description" rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Добавить</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

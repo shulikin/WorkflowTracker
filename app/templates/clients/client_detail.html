@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Start{% endblock %}
+
+{% block content %}
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+      <ol class="breadcrumb" style="font-size: 1.2rem;">
+        <li class="breadcrumb-item"><a href="/">Главная</a></li>
+        <li class="breadcrumb-item"><a href="/clients">Клиенты</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ client.name }}</li>
+      </ol>
+    </nav>
+    <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">Адрес:</h6>
+          <p class="card-text">проспект Строителей, 3, Кудрово, Заневское городское поселение, Всеволожский район, Ленинградская область</p>
+          <hr>
+          <h6 class="card-title">Контакты:</h6>
+          <p class="card-text">+7 (931) 322-97-12  +7 (812) 612-97-12   april78dental.ru</p>
+          <hr>
+          <h6 class="card-title">Описание:</h6>
+          <p class="card-text">{{ client.description }}</p>
+          <hr>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Редактировать</button>
+            <form action="/client/{{ client.id }}/delete" method="post" onsubmit="return confirm('Удалить клиента?');">
+              <button class="btn btn-danger" type="submit">Удалить</button>
+            </form>
+            
+          </div>
+      </div>
+
+
+  <!-- Модальное окно -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Заголовок модального окна</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+            <form action="/client/{{ client.id }}/edit" method="post">
+                <div class="mb-3">
+                  <label for="name" class="form-label">	Наименование организации</label>
+                  <input class="form-control" type="stringformat" name="name" id="name" required value="{{ client.name }}" >
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Описание</label>
+                    <textarea class="form-control" name="description" id="description" rows="2">{{ client.description }}</textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Отправить</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

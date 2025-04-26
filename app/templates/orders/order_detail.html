@@ -1,0 +1,329 @@
+{% extends "base.html" %}
+
+{% block title %}Start{% endblock %}
+
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+      <ol class="breadcrumb" style="font-size: 1.2rem;">
+        <li class="breadcrumb-item"><a href="/">Главная</a></li>
+        <li class="breadcrumb-item"><a href="/orders">Заказы</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+            <a href="/orders" data-bs-toggle="modal" data-bs-target="#staticBackdrop" role="button" >Заказ №{{ order.number }}</a></li>
+      </ol>
+    </nav>
+  </div>
+      <div class="h4 pb-2 mb-4 text-success border-bottom border-success-emphasis">Процессы</div>
+      <div class="border border-success p-2 mb-2">
+        <h5>1. Доставка образца</h5>
+        Курьер: 
+      </div>
+      <div class="border border-success p-2 mb-2">
+        <h5>2. Проектирование</h5>
+        Технолог: 
+      </div>
+      <div class="border border-success p-2 mb-2">
+        <h5>3. Выбор материала и заготовки</h5>
+        
+
+      </div>
+      <div class="border border-success p-2 mb-2">
+        Фрезерование и прецизионная обработка
+      
+      
+      </div>
+      <div class="border border-success p-2 mb-2">
+        Обработка поверхности
+      
+      </div>
+      <div class="border border-success p-2 mb-2">
+        Обработка поверхности
+      
+      </div>
+
+
+
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Панель навигации</a>
+        </div>
+      </nav>
+
+      <br><span class="border border-danger">nnnnnnnnnnnnk</span>
+      <div class="card">
+        <div class="card-body">
+
+            <span class="border border-danger-subtle"></span>
+        </div>
+      </div>
+    </div>
+      <br>
+      <div class="card">
+        <div class="card-body">
+          Это некий текст в теле карточки.
+        </div>
+      </div>
+      <br>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="container text-Start">
+                <div class="row">
+                    <div class="col-sm-6" >
+                        <a class="navbar-brand" href="#">Сопровождение образца</a>
+                    </div>
+
+                    <div class="col-sm-1 text-end">
+                        <a class="navbar-brand" href="#">Курьер:</a> 
+                    </div>
+                    <div class="col-sm-3 text-end">
+
+                        <form class="d-flex" role="select">
+                            <select class="form-select" aria-label="Пример выбора по умолчанию">
+                                <option selected>Откройте это меню выбора</option>
+                                <option value="1">Один</option>
+                                <option value="2">Два</option>
+                                <option value="3">Три</option>
+                              </select>
+                            </form>
+
+
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="up">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-up"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="down">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-down"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+      <hr>
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="container text-Start">
+                <div class="row">
+                    <div class="col-sm-10" >
+                        <a class="navbar-brand" href="#">Проектирование </a><span class="badge text-bg-secondary">4</span>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="up">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-up"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="down">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-down"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+      <hr>
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="container text-Start">
+                <div class="row">
+                    <div class="col-sm-10" >
+                        <a class="navbar-brand" href="#">Выбор материала </a><span class="badge text-bg-secondary">4</span>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="up">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-up"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="down">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-down"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+      <hr>
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="container text-Start">
+                <div class="row">
+                    <div class="col-sm-10" >
+                        <a class="navbar-brand" href="#">Фрезерование и прецизионная обработка </a><span class="badge text-bg-secondary">4</span>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="up">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-up"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="down">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-down"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+      <hr>  
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="container text-Start">
+                <div class="row">
+                    <div class="col-sm-10" >
+                        <a class="navbar-brand" href="#">Обработка поверхности </a><span class="badge text-bg-secondary">4</span>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="up">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-up"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="down">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-down"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+      <hr>
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="container text-Start">
+                <div class="row">
+                    <div class="col-sm-10" >
+                        <a class="navbar-brand" href="#">Контроль качества </a><span class="badge text-bg-secondary">4</span>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="up">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-up"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="down">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-down"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+      <hr>
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="container text-Start">
+                <div class="row">
+                    <div class="col-sm-10" >
+                        <a class="navbar-brand" href="#">Испытания на долгосрочную стабильность </a><span class="badge text-bg-secondary">4</span>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="up">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-up"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="down">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-down"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+      <hr>
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="container text-Start">
+                <div class="row">
+                    <div class="col-sm-10" >
+                        <a class="navbar-brand" href="#">Упаковка и стерилизация </a><span class="badge text-bg-secondary">4</span>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="up">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-up"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="down">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-down"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+      <hr>
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="container text-Start">
+                <div class="row">
+                    <div class="col-sm-10" >
+                        <a class="navbar-brand" href="#">Курьерская доставка продукции</a><span class="badge text-bg-secondary">4</span>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="up">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-up"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 text-end">
+                        <form class="d-flex" role="down">
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-chevron-down"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+      <hr>
+
+
+
+
+
+
+
+   <!-- Модальное окно -->
+   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Заказ №{{ order.number }}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">Описание:</h6>
+                  <p class="card-text">{{ order.description }}</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    &nbsp;
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      Редактировать</button>
+                  </div>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          <form action="" method="post" onsubmit="return confirm('Удалить клиента?');">
+            <button class="btn btn-danger" type="submit">Удалить заказ</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
